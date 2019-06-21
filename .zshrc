@@ -12,6 +12,10 @@ fi
 # Install antigen plugins
 source "$ADOTDIR/antigen/antigen.zsh"
     
+# add in autojump
+
+. /usr/share/autojump/autojump.sh
+
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
 antigen bundle <<EOBUNDLES
@@ -28,6 +32,7 @@ antigen bundle <<EOBUNDLES
 	zsh-users/zsh-completions
 
 	docker
+	docker-compose
 	history
 	colored-man-pages
 	command-not-found
