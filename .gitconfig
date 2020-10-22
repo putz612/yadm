@@ -1,0 +1,12 @@
+[user]
+	name = Jason Sievert
+	email = jsievert@gmail.com
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  side-by-side = true
+  line-numbers-left-format = ""
+  line-numbers-right-format = "│ "
+  syntax-theme = Nord
