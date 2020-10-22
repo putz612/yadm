@@ -1,6 +1,5 @@
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.local/bin" # Adding for PIP
 
 if [ "$(command -v docker)" ]; then
   alias tldr='docker run --rm -it -v ~/.tldr/:/root/.tldr/ nutellinoit/tldr'
