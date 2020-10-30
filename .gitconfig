@@ -10,3 +10,5 @@
   line-numbers-left-format = ""
   line-numbers-right-format = "│ "
   syntax-theme = Nord
+[pull]
+	ff = only
