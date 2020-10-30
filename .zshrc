@@ -19,4 +19,5 @@ if [ "$(command -v bat)" ]; then
   alias cat='bat -pp --theme="Nord"'
 fi
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
