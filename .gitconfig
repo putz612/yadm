@@ -10,5 +10,10 @@
   line-numbers-left-format = ""
   line-numbers-right-format = "│ "
   syntax-theme = Nord
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [pull]
 	ff = only
