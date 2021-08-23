@@ -21,5 +21,20 @@ if [ "$(command -v bat)" ]; then
   alias cat='bat -pp --theme="Nord"'
 fi
 
-eval "$(zoxide init zsh)"
+
+export DENO_INSTALL="/home/jason/.deno"
+
+
+if [ -d "$DENO_INSTALL" ]; then
+  export PATH="$DENO_INSTALL/bin:$PATH"
+  fpath=(~/.zsh $fpath)
+  autoload -Uz compinit
+  compinit -u
+fi
+
+
+if [ "$(command -v exa)" ]; then
+  eval "$(zoxide init zsh)"
+fi
+
 eval "$(starship init zsh)"
