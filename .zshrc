@@ -40,6 +40,6 @@ fi
 eval "$(starship init zsh)"
 
 export SPICETIFY_INSTALL="/home/jason/.spicetify"
-if [ -d "$PICETIFY_INSTALL" ]; then
+if [ -d "$SPICETIFY_INSTALL" ]; then
   export PATH="$PATH:$HOME/.spicetify"
 fi
