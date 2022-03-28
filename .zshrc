@@ -16,6 +16,12 @@ if [ "$(command -v exa)" ]; then
   alias ll='exa -l --color always --icons -a -s type'
 fi
 
+KREW="$HOME/.krew/bin"
+if [ -f "$KREW" ]; then
+    export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
+
 if [ "$(command -v bat)" ]; then
   unalias -m 'cat'
   alias cat='bat -pp --theme="Nord"'
@@ -43,3 +49,4 @@ export SPICETIFY_INSTALL="/home/jason/.spicetify"
 if [ -d "$SPICETIFY_INSTALL" ]; then
   export PATH="$PATH:$HOME/.spicetify"
 fi
+
