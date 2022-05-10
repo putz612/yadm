@@ -1,5 +1,6 @@
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.local/bin" # Add python local things
 
 bindkey -v
 
