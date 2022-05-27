@@ -22,6 +22,11 @@ if [ -f "$KREW" ]; then
     export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
+RD="$HOME/.rd/bin"
+if [ -f "$RD" ]; then
+  export PATH="$PATH:$HOME/.rd/bin"
+fi
+
 
 if [ "$(command -v bat)" ]; then
   unalias -m 'cat'
