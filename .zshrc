@@ -56,3 +56,7 @@ if [ -d "$SPICETIFY_INSTALL" ]; then
   export PATH="$PATH:$HOME/.spicetify"
 fi
 
+export RANCHER_DESKTOP="/home/jason/.rd/"
+if [ -d "$RANCHER_DESKTOP" ]; then
+  export PATH="$PATH:$HOME/.rd/bin"
+fi
