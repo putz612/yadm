@@ -1,62 +1,14 @@
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.local/bin" # Add python local things
-
-bindkey -v
-
-if [ "$(command -v docker)" ]; then
-  alias tldr='docker run --rm -it -v ~/.tldr/:/root/.tldr/ nutellinoit/tldr'
-fi
-
-if [ "$(command -v exa)" ]; then
-  unalias -m 'll'
-  unalias -m 'l'
-  unalias -m 'la'
-  unalias -m 'ls'
-  alias ls='exa -G  --color auto --icons -a -s type'
-  alias ll='exa -l --color always --icons -a -s type'
-fi
-
-KREW="$HOME/.krew/bin"
-if [ -f "$KREW" ]; then
-    export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-fi
-
-RD="$HOME/.rd/bin"
-if [ -f "$RD" ]; then
-  export PATH="$PATH:$HOME/.rd/bin"
-fi
-
-
-if [ "$(command -v bat)" ]; then
-  unalias -m 'cat'
-  alias cat='bat -pp --theme="Nord"'
-fi
-
-
-export DENO_INSTALL="/home/jason/.deno"
-
-
-if [ -d "$DENO_INSTALL" ]; then
-  export PATH="$DENO_INSTALL/bin:$PATH"
-  fpath=(~/.zsh $fpath)
-  autoload -Uz compinit
-  compinit -u
-fi
-
-
-if [ "$(command -v exa)" ]; then
-  eval "$(zoxide init zsh)"
-fi
-
 eval "$(starship init zsh)"
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Users/Jason.Sievert/Library/Python/3.9/bin"
+export PATH="$PATH:/Users/Jason.Sievert/.bin"
 
-export SPICETIFY_INSTALL="/home/jason/.spicetify"
-if [ -d "$SPICETIFY_INSTALL" ]; then
-  export PATH="$PATH:$HOME/.spicetify"
-fi
-
-export RANCHER_DESKTOP="/home/jason/.rd/"
-if [ -d "$RANCHER_DESKTOP" ]; then
-  export PATH="$PATH:$HOME/.rd/bin"
-fi
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/Jason.Sievert/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/work/meraki/sourceME
