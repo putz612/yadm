@@ -16,6 +16,13 @@ eval "$(starship init zsh)"
 export PATH="$PATH:$HOME/.local/bin" 
 
 
+# neovim ftw
+# https://github.com/neovim/neovim
+if [ "$(command -v nvim)" ]; then
+  alias vim="nvim"
+  alias vi="nvim"
+fi
+
 # exa is the new hot ls
 # https://the.exa.website/
 if [ "$(command -v exa)" ]; then
@@ -41,7 +48,7 @@ if [ "$(command -v bat)" ]; then
   alias cat='bat -pp --theme="Nord"'
 fi
 
-if [ $machine == 'Mac']; then
+if [[ "$machine" == 'Mac' ]]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
     source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -50,7 +57,7 @@ if [ $machine == 'Mac']; then
     export PATH="$PATH:/Users/Jason.Sievert/.bin"
 fi
 
-if [ $machine == 'Linux' ]; then
+if [[ "$machine" == 'Linux' ]]; then
 
 fi
 
