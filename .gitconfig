@@ -1,3 +1,6 @@
+[user]
+  name = Jason Sievert
+  email = jsievert@gmail.com
 [includeIf "gitdir:~/personal/"]
   path = ~/.gitconfig-personal
 [includeIf "gitdir:~/work/"]
