@@ -1,6 +1,7 @@
-[user]
-	name = Sievert, Jason
-	email = Jason.Sievert@surescripts.com
+[includeIf "gitdir:~/personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
 [init]
 	defaultBranch = main
 [pull]
@@ -8,3 +9,18 @@
 	rebase = true
 [core]
 	excludesfile = /Users/Jason.Sievert/.gitignore
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  side-by-side = true
+  line-numbers-left-format = ""
+  line-numbers-right-format = "│ "
+  syntax-theme = Nord
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = cache
