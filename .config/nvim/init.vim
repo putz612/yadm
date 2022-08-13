@@ -10,6 +10,7 @@ set tabstop=4               " number of columns occupied by a tab character
 set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
+set laststatus=2
 
 " set cc=80                   " set an 80 column border for good coding style
 " set number                  " add line numbers
@@ -19,7 +20,10 @@ set softtabstop=2           " see multiple spaces as tabstops so <BS> does the r
 call plug#begin()
 
   Plug 'tpope/vim-sensible'
-  Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
+"  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
+
+colorscheme nord
