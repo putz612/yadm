@@ -1,5 +1,6 @@
 # What OS are we really on
 unameOut="$(uname -s)"
+arch="$(uname -p)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
     Darwin*)    machine=Mac;;
@@ -49,12 +50,18 @@ if [ "$(command -v bat)" ]; then
 fi
 
 if [[ "$machine" == 'Mac' ]]; then
+  if [[ "$arch" == "i386" ]]; then
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+    source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  elif [[ "$arch" == "arm64" ]]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
     source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  fi
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-    export PATH="$PATH:/Users/Jason.Sievert/Library/Python/3.9/bin"
-    export PATH="$PATH:/Users/Jason.Sievert/.bin"
+    export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+    export PATH="$PATH:$HOME/.bin"
 fi
 
 if [[ "$machine" == 'Linux' ]]; then
