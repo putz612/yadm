@@ -42,6 +42,9 @@ if [ -f "$RD" ]; then
   export PATH="$PATH:$HOME/.rd/bin"
 fi
 
+# Krew plugin for kubectl
+export PATH="${PATH}:${HOME}/.krew/bin"
+
 # Bat is more better than cat
 # https://github.com/sharkdp/bat
 if [ "$(command -v bat)" ]; then
