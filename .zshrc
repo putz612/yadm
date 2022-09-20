@@ -9,6 +9,12 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
+# https://github.com/ansible/ansible/issues/49207
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+
+
+
 # starship is not a spaceship
 # https://starship.rs/
 eval "$(starship init zsh)"
