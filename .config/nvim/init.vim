@@ -39,4 +39,5 @@ call plug#begin()
 
 call plug#end()
 
+source $HOME/.config/nvim/modules/lightline.vim
 colorscheme nord
