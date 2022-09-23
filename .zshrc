@@ -10,7 +10,7 @@ case "${unameOut}" in
 esac
 
 # https://github.com/ansible/ansible/issues/49207
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 
 
@@ -44,7 +44,7 @@ fi
 # for the Rancher Desktop things
 # https://github.com/rancher-sandbox/rancher-desktop/
 RD="$HOME/.rd/bin"
-if [ -f "$RD" ]; then
+if [ -d "$RD" ]; then
   export PATH="$PATH:$HOME/.rd/bin"
 fi
 
@@ -63,7 +63,7 @@ if [[ "$machine" == 'Mac' ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
     source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-  elif [[ "$arch" == "arm64" ]]; then
+  elif [[ "$arch" == "arm" ]]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
     source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
