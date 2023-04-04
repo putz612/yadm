@@ -59,6 +59,10 @@ if [ "$(command -v bat)" ]; then
 fi
 
 if [[ "$machine" == 'Mac' ]]; then
+  # https://github.com/NixOS/nix/issues/3616#issuecomment-1495570532
+  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  fi
   if [[ "$arch" == "i386" ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
